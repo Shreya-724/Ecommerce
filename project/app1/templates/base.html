@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Thrift Store</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="top-navbar">
+        <div class="logo">Thrift Store</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button>Search</button>
+        </div>
+        <div class="auth-options">
+            <a href="#">Login</a>
+            <a href="#">Cart</a>
+        </div>
+    </div>
+      
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+
+
+    <footer>
+        &copy; 2024 Thrift Store. All Rights Reserved.
+    </footer>
+</body>
+</html>

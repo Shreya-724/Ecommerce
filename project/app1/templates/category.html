@@ -1,0 +1,187 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+    <main>
+        <div class="banner">
+            category page
+        </div>
+        <h1>Featured Products{{ category }}</h1>
+                <div class="product-grid">
+                    {% for product in products %}
+                    {% if product.is_sale %}
+
+                    <div class="product-card">
+
+                        <img src="{{product.image.url }}" alt="Product Image">
+                        <div class="product-info">
+                            <h3 class="product-title">{{product.name}}</h3>
+                            <p class="product-category">{{product.category}}</p>
+                            <div class="product-rating">
+                                ★★★★★ 5
+                            </div>
+                            <div class="product-pricing">
+                                <strike>
+                                <span class="discounted-price">Rs.{{product.price}}</span>
+                                </strike>
+                                &nbsp
+                                <span class="discounted-price">Rs.{{product.sale_price}}</span>
+
+                            </div>
+                            &nbsp
+                            <a href="{% url 'product' product.id %}"><button>view</button></a>
+                        </div>
+                    </div>
+                    {% else %}
+            <div class="product-card">
+                <img src="{{product.image.url }}" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">{{product.name}}</h3>
+                    <p class="product-category">{{product.category}}</p>
+                    <div class="product-rating">
+                        ★★★★★ 5
+                    </div>
+                    <div class="product-pricing">
+                        <span class="discounted-price">Rs.{{product.price}}</span>
+                    </div>
+                    &nbsp
+                    <a href="{% url 'product' product.id %}"><button>view</button></a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+           
+        </div><br>
+        <div class="slogan-bar">
+            "Sustainable Fashion, Timeless Style, Affordable Prices!"
+        </div>
+        <h1>Shoes</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Vintage Brown Boots</h3>
+                    <p class="product-category">Shoes</p>
+                    <div class="product-rating">
+                        ★★★★☆ 4
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.5000</span>
+                        <span class="discounted-price">Rs.2000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Black Running Shoes</h3>
+                    <p class="product-category">Shoes</p>
+                    <div class="product-rating">
+                        ★★★★★ 5
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.4000</span>
+                        <span class="discounted-price">Rs.1500</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">White Sneakers</h3>
+                    <p class="product-category">Shoes</p>
+                    <div class="product-rating">
+                        ★★★★☆ 4
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.3000</span>
+                        <span class="discounted-price">Rs.1200</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Grey Loafers</h3>
+                    <p class="product-category">Shoes</p>
+                    <div class="product-rating">
+                        ★★★★☆ 4
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.3500</span>
+                        <span class="discounted-price">Rs.1400</span>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="slogan-bar">
+            "Thrift Clothes and Earn With us"<br><br>
+                <button>Start Selling Clothes</button>
+        </div><br>
+        <h1>Bags and Accessories</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Classic Leather Bag</h3>
+                    <p class="product-category">Bags</p>
+                    <div class="product-rating">
+                        ★★★★★ 5
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.8000</span>
+                        <span class="discounted-price">Rs.3000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Vintage Backpack</h3>
+                    <p class="product-category">Bags</p>
+                    <div class="product-rating">
+                        ★★★★☆ 4
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.6000</span>
+                        <span class="discounted-price">Rs.2500</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Golden Earrings</h3>
+                    <p class="product-category">Accessories</p>
+                    <div class="product-rating">
+                        ★★★★★ 5
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.4000</span>
+                        <span class="discounted-price">Rs.1200</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="img1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3 class="product-title">Silk Scarf</h3>
+                    <p class="product-category">Accessories</p>
+                    <div class="product-rating">
+                        ★★★★☆ 4
+                    </div>
+                    <div class="product-pricing">
+                        <span class="original-price">Rs.3000</span>
+                        <span class="discounted-price">Rs.1000</span>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="slogan-bar">
+            "Thrift Clothes and Earn With us"<br><br>
+                <button>Start Selling Clothes</button>
+        </div><br>
+    </main>
+</body>
+</html>
+{% endblock %}

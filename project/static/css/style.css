@@ -1,0 +1,250 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top-navbar {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.top-navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.top-navbar .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-navbar .search-bar input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.top-navbar .search-bar button {
+    background-color: #45a049;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.top-navbar .search-bar button:hover {
+    background-color: #3e8e41;
+}
+
+.top-navbar .auth-options {
+    display: flex;
+    gap: 10px;
+}
+
+.top-navbar .auth-options a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #45a049;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.top-navbar .auth-options a:hover {
+    background-color: #3e8e41;
+}
+
+.main-navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.main-navbar a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 20px;
+}
+
+.banner {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.slogan-bar {
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 20px;
+    border-top: 2px solid #4CAF50;
+}
+
+.slogan-bar button {
+    background-color: #45a049;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slogan-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Product Grid */
+.product-grid {
+display: flex;
+flex-wrap: wrap;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+justify-content: center;
+}
+
+
+ /* Product Card */
+ .product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/*Product Image Styling */
+
+.product-card img {
+    width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+/* Product Info Styling */
+.product-info {
+    padding: 15px; /* Added padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .product-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .product-category {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+  }
+
+  .product-rating {
+    font-size: 14px;
+    color: #ffa41b;
+    margin-bottom: 8px;
+  }
+
+  .product-pricing {
+    font-size: 14px;
+  }
+
+  .original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px;
+  }
+
+  .discounted-price {
+    color: #e60023;
+    font-weight: bold;
+  }
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .top-navbar .search-bar input[type="text"] {
+        width: 100px;
+    }
+}
+.badge {
+    position: absolute;
+    top: 0.5rem; /* Distance from the top */
+    right: 0.5rem; /* Distance from the right */
+    background-color: red; /* Background color of the badge */
+    color: white; /* Text color of the badge */
+    padding: 0.3rem 0.6rem; /* Padding inside the badge */
+    font-size: 0.8rem; /* Font size of the badge text */
+    font-weight: bold; /* Bold text */
+    border-radius: 0.5rem; /* Rounded corners for the badge */
+    z-index: 10; /* Ensures the badge appears on top of the product card */
+    text-transform: uppercase; /* Optional: Makes the text uppercase */
+}
+
+
+button {
+    background-color: #45a049;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+

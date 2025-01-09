@@ -1,0 +1,151 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Thrift Store</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Banner Section */
+.about-banner {
+    text-align: center;
+    padding: 3rem;
+    background-color: #e1e5ea;
+    color: #444;
+}
+
+.about-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* About Content Section */
+.about-content {
+    padding: 2rem 3rem;
+    background-color: #fff;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h3 {
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.about-content ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+.about-content p, .about-content li {
+    margin-bottom: 1rem;
+}
+
+/* Team Section */
+.team {
+    padding: 2rem 3rem;
+    text-align: center;
+    background-color: #f1f3f5;
+}
+
+.team-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.team-member h4 {
+    margin: 0.5rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #444;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="about-banner">
+            <h2>Welcome to Thrift Treasures</h2>
+            <p>Your go-to destination for sustainable fashion and unique finds!</p>
+        </section>
+        <section class="about-content">
+            <h3>Who We Are</h3>
+            <p>
+                At Thrift Treasures, we believe in giving clothes and accessories a second chance. 
+                Our e-commerce thrift store offers a wide variety of stylish clothing for men and women, 
+                as well as bags, shoes, and accessories, all at affordable prices.
+            </p>
+            <h3>What We Offer</h3>
+            <ul>
+                <li>High-quality second-hand and vintage clothing for men and women.</li>
+                <li>Stylish bags and accessories to complement your wardrobe.</li>
+                <li>Trendy shoes for every occasion.</li>
+                <li>Unique, one-of-a-kind pieces that you won’t find anywhere else.</li>
+            </ul>
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is to make sustainable fashion accessible to everyone. 
+                By shopping with us, you’re not just saving money but also helping reduce textile waste 
+                and supporting a more sustainable planet.
+            </p>
+        </section>
+        <section class="team">
+            <h3>Meet Our Team</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="team1.jpg" alt="Team Member 1">
+                    <h4>GHI</h4>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.jpg" alt="Team Member 2">
+                    <h4>JXYZ</h4>
+                    <p>Creative Director</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member 3">
+                    <h4>ABC</h4>
+                    <p>Operations Manager</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+
+{% endblock %}
