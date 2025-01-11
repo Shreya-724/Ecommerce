@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Thrift Store</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="top-navbar">
@@ -16,8 +17,8 @@
             <button>Search</button>
         </div>
         <div class="auth-options">
-            <a href="#">Login</a>
-            <a href="#">Cart</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'cart_summary' %}">Cart</a>
         </div>
     </div>
       
