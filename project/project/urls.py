@@ -22,9 +22,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app1.urls')),
-    path('cart/',include('cart.urls')),
-]
+    path('cart/', include('cart.urls')),
+]      + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+      
 
 # Add static and media URL patterns
-if settings.DEBUG:  # Ensure these URLs are only used in development
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#if settings.DEBUG:  # Ensure these URLs are only used in development
+   # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

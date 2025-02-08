@@ -85,17 +85,6 @@ main {
     padding: 20px;
 }
 
-.banner {
-    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-    height: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-}
 
 .slogan-bar {
     background-color: #f7f7f7;
