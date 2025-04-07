@@ -1,11 +1,23 @@
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()  # Load .env file
+
+#KHALTI_URL = os.getenv("KHALTI_URL")
+# Debugging: Print to check if KHALTI_URL is loaded
+#print(f"KHALTI_URL from env: {KHALTI_URL}")
+KHALTI_AUTH = os.getenv("KHALTI_AUTH", "").strip()  # Remove any extra spaces
+KHALTI_URL = os.getenv("KHALTI_URL")
+
+# Ensure the "Key " prefix is added in the header
+KHALTI_AUTH_HEADER = f"Key {KHALTI_AUTH}"
 
 
 
 LOGIN_URL = "/login/"  # URL for the login page
-LOGIN_REDIRECT_URL = "/home/"  # URL to redirect to after login
+LOGIN_REDIRECT_URL = "/home/"  # URL to redirect to after login  # Replace with correct API URL
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1',
     'cart',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +65,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +132,18 @@ STATICFILES_DIRS =['static/']
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# payment gateway configurations
+TRANSACTION_REDIRECT_URL = os.getenv("TRANSACTION_REDIRECT_URL")
+WEBSITE_URL = os.getenv("WEBSITE_URL")
 
+# khalti configurations
+KHALTI_CUSTOMER_NAME = os.getenv("KHALTI_CUSTOMER_NAME")
+KHALTI_CUSTOMER_EMAIL = os.getenv("KHALTI_CUSTOMER_EMAIL")
+KHALTI_CUSTOMER_PHONE = os.getenv("KHALTI_CUSTOMER_PHONE")
+KHALTI_MERCHANT_USERNAME = os.getenv("KHALTI_MERCHANT_USERNAME")
+KHALTI_AUTH = os.getenv("KHALTI_AUTH")
+KHALTI_URL = os.getenv("KHALTI_URL")
+KHALTI_LOOKUP_URL = os.getenv("KHALTI_LOOKUP_URL")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

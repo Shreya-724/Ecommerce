@@ -129,16 +129,16 @@ footer {
                     </div>
                     <div class="product-pricing">
                         <strike>
-                        <span class="discounted-price">Rs{{product.price}}</span>
+                        <span class="discounted-price">Rs.{{product.price}}</span>
                         </strike>
                         &nbsp
-                        <span class="discounted-price">Rs{{product.sale_price}}</span>
+                        <span class="discounted-price">Rs.{{product.sale_price}}</span>
 
                     </div>
                 </div>
 
               {% else %}
-                ${{ product.price }}
+                Rs.{{ product.price }}
                 
               {% endif %}
               <br><br>
@@ -170,9 +170,15 @@ footer {
         </div>
       </div><br><br>
     {% endfor %} 
+    <div align="right">
+    <a href="{%url 'checkout' %}" class="btn btn-success">Checkout</a>
+    </div>
+
+
+
     {% else %} 
     your cart is empty
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>   
     {% endif %}
 </div>
     <script>
@@ -188,7 +194,9 @@ footer {
                 action: 'post',
             },
             success: function (json) {
-                button.closest('.card').remove(); // Remove product card
+                button.closest('.card').remove();
+                location.reload();
+                // Remove product card
             },
             error: function (xhr, errmsg, err) {
                 console.error(xhr.responseText);

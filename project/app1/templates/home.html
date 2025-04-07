@@ -1,191 +1,61 @@
 {% extends 'base.html'%}
-
+{% load static %}
 
 {% block content %}
-    <main>
-        <img src="img1.jpg">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">     
-        
-        <h1>Featured Products</h1>
-                <div class="product-grid">
-                    {% for product in products %}
-                    {% if product.is_sale %}
+<main style="margin: 0; padding: 0; display: block; width: 100%; font-size: 0; line-height: 0;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">     
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 
-                    <div class="product-card">
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-primary sale-button">Sale</button>
-                          </div>
+    <div style="margin: 0 !important; padding: 0 !important; display: block; width: 100%; max-width: 100vw; box-sizing: border-box; overflow: hidden; font-size: 0; line-height: 0;">
+        <img src="{% static 'img/banner.png' %}"  
+             alt="Banner Image"  
+             style="width: 100%; height: auto; display: block; margin: 0 !important; padding: 0 !important; border: 0; vertical-align: top;">
+    </div>
 
-                        <img src="{{product.image.url }}" alt="Product Image">
-                        <div class="product-info">
-                            <h3 class="product-title">{{product.name}}</h3>
-                            <p class="product-category">{{product.category}}</p>
-                            <div class="product-rating">
-                                ★★★★★ 5
-                            </div>
-                            <div class="product-pricing">
-                                <strike>
-                                <span class="discounted-price">Rs.{{product.price}}</span>
-                                </strike>
-                                &nbsp
-                                <span class="discounted-price">Rs.{{product.sale_price}}</span>
+    <h1>Featured Products</h1>
 
-                            </div>
-                            &nbsp
-                            <a href="{% url 'product' product.id %}"><button>view</button></a>
-                        </div>
-                    </div>
-                    {% else %}
-            <div class="product-card">
-                <img src="{{product.image.url }}" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">{{product.name}}</h3>
-                    <p class="product-category">{{product.category}}</p>
-                    <div class="product-rating">
-                        ★★★★★ 5
-                    </div>
-                    <div class="product-pricing">
-                        <span class="discounted-price">Rs.{{product.price}}</span>
-                    </div>
-                    &nbsp
-                    <a href="{% url 'product' product.id %}"><button>view</button></a>
-                </div>
-            </div>
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            {% if product.is_sale %}
             {% endif %}
-            {% endfor %}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">     
-        </div><br>
-        <div class="slogan-bar">
-            "Sustainable Fashion, Timeless Style, Affordable Prices!"
+            
+            <img src="{{ product.image.url }}" alt="Product Image">
+            
+            <div class="product-info">
+                <h3 class="product-title">{{ product.name }}</h3>
+                <p class="product-category">{{ product.category }}</p><br>
+                
+                <div class="product-rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div><br>
+                
+                <div class="product-pricing">
+                    {% if product.is_sale %}
+                        <strike><span class="discounted-price">Rs.{{ product.price }}</span></strike> &nbsp;
+                        <span class="discounted-price">Rs.{{ product.sale_price }}</span>
+                    {% else %}
+                        <span class="discounted-price">Rs.{{ product.price }}</span>
+                    {% endif %}
+                </div>
+
+                <a href="{% url 'product' product.id %}" class="btn btn-primary mt-3">View</a>
+            </div>
         </div>
-        <h1>Shoes</h1>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Vintage Brown Boots</h3>
-                    <p class="product-category">Shoes</p>
-                    <div class="product-rating">
-                        ★★★★☆ 4
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.5000</span>
-                        <span class="discounted-price">Rs.2000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Black Running Shoes</h3>
-                    <p class="product-category">Shoes</p>
-                    <div class="product-rating">
-                        ★★★★★ 5
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.4000</span>
-                        <span class="discounted-price">Rs.1500</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">White Sneakers</h3>
-                    <p class="product-category">Shoes</p>
-                    <div class="product-rating">
-                        ★★★★☆ 4
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.3000</span>
-                        <span class="discounted-price">Rs.1200</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Grey Loafers</h3>
-                    <p class="product-category">Shoes</p>
-                    <div class="product-rating">
-                        ★★★★☆ 4
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.3500</span>
-                        <span class="discounted-price">Rs.1400</span>
-                    </div>
-                </div>
-            </div>
-        </div><br>
-        <div class="slogan-bar">
-            "Thrift Clothes and Earn With us"<br><br>
-                <button>Start Selling Clothes</button>
-        </div><br>
-        <h1>Bags and Accessories</h1>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Classic Leather Bag</h3>
-                    <p class="product-category">Bags</p>
-                    <div class="product-rating">
-                        ★★★★★ 5
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.8000</span>
-                        <span class="discounted-price">Rs.3000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Vintage Backpack</h3>
-                    <p class="product-category">Bags</p>
-                    <div class="product-rating">
-                        ★★★★☆ 4
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.6000</span>
-                        <span class="discounted-price">Rs.2500</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Golden Earrings</h3>
-                    <p class="product-category">Accessories</p>
-                    <div class="product-rating">
-                        ★★★★★ 5
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.4000</span>
-                        <span class="discounted-price">Rs.1200</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img1.jpg" alt="Product Image">
-                <div class="product-info">
-                    <h3 class="product-title">Silk Scarf</h3>
-                    <p class="product-category">Accessories</p>
-                    <div class="product-rating">
-                        ★★★★☆ 4
-                    </div>
-                    <div class="product-pricing">
-                        <span class="original-price">Rs.3000</span>
-                        <span class="discounted-price">Rs.1000</span>
-                    </div>
-                </div>
-            </div>
-        </div><br>
-        <div class="slogan-bar">
-            "Thrift Clothes and Earn With us"<br><br>
-                <button>Start Selling Clothes</button>
-        </div><br>
-    </main>
-</body>
-</html>
+        {% endfor %}
+    </div>
+
+    <br>
+    <div class="slogan-bar">
+        "Sustainable Fashion, Timeless Style, Affordable Prices!"
+    </div>
+</main>
+
 {% endblock %}

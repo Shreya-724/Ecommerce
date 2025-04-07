@@ -6,7 +6,7 @@ body {
 }
 
 .top-navbar {
-    background-color: #4CAF50;
+    background-color: #7537ac;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@ body {
 }
 
 .top-navbar .search-bar button {
-    background-color: #45a049;
+    background-color:#b97818;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -41,7 +41,7 @@ body {
 }
 
 .top-navbar .search-bar button:hover {
-    background-color: #3e8e41;
+    background-color:#dcaf6c;
 }
 
 .top-navbar .auth-options {
@@ -53,13 +53,13 @@ body {
     color: white;
     text-decoration: none;
     padding: 5px 10px;
-    background-color: #45a049;
+    background-color:#dcaf6c;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .top-navbar .auth-options a:hover {
-    background-color: #3e8e41;
+    background-color:#dcaf6c;
 }
 
 .main-navbar {
@@ -170,10 +170,15 @@ justify-content: center;
   }
 
   .product-rating {
-    font-size: 14px;
+    font-size: 18px;  /* Increase font size if stars appear small */
     color: #ffa41b;
-    margin-bottom: 8px;
-  }
+    margin-bottom: 12px;  /* Space below rating */
+    display: flex;  /* Ensure stars are spaced out */
+    align-items: center; /* Center align */
+    gap: 5px;  /* Space between stars */
+}
+
+
 
   .product-pricing {
     font-size: 14px;

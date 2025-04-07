@@ -31,16 +31,16 @@
                     </div>
                     <div class="product-pricing">
                         <strike>
-                        <span class="discounted-price">Rs{{product.price}}</span>
+                        <span class="discounted-price">Rs.{{product.price}}</span>
                         </strike>
                         &nbsp
-                        <span class="discounted-price">Rs{{product.sale_price}}</span>
+                        <span class="discounted-price">Rs.{{product.sale_price}}</span>
 
                     </div>
                 </div>
 
               {% else %}
-                ${{ product.price }}
+                Rs.{{ product.price }}
                 
               {% endif %}
               <br><br>
@@ -60,7 +60,6 @@
               <a href="{% url 'home'%}" class="btn btn-secondary">Home</a>
               <button type="button" value="{{ product.id }}"
               class ="btn btn-secondary" id= "add-cart">add to cart</button>
-              <a href="{% url 'buy'%}" class="btn btn-secondary">Buy</a>
                 </center>
             </div>
           </div>
@@ -72,6 +71,7 @@
     
 </body>
 </html>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 <script>
   // Check if the button is pressed
@@ -89,12 +89,13 @@
       success: function(json){
         //console.log(json);
         document.getElementById("cart_quantity").textContent = json.qty
+        location.reload();
       },
       error: function(xhr, errmsg, err) {
       }
     });
   })
 </script>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
 
 {% endblock %}
