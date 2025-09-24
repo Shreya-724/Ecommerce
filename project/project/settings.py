@@ -4,14 +4,12 @@ import os
 from dotenv import load_dotenv
 load_dotenv()  # Load .env file
 
-#KHALTI_URL = os.getenv("KHALTI_URL")
-# Debugging: Print to check if KHALTI_URL is loaded
-#print(f"KHALTI_URL from env: {KHALTI_URL}")
-KHALTI_AUTH = os.getenv("KHALTI_AUTH", "").strip()  # Remove any extra spaces
+KHALTI_AUTH = os.getenv("KHALTI_AUTH", "").strip()
+KHALTI_AUTH_HEADER = f"Key {KHALTI_AUTH}"
 KHALTI_URL = os.getenv("KHALTI_URL")
 
 # Ensure the "Key " prefix is added in the header
-KHALTI_AUTH_HEADER = f"Key {KHALTI_AUTH}"
+
 
 
 
@@ -33,7 +31,7 @@ SECRET_KEY = 'django-insecure-v)ieewt7iycoewccvau+%le*-)9=7vg-$)$xo=_kje#i$y*9&8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.render.com']
+ALLOWED_HOSTS = []
 
 
 
@@ -130,7 +128,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS =['static/']
 MEDIA_URL = 'media/'
@@ -151,5 +148,7 @@ KHALTI_LOOKUP_URL = os.getenv("KHALTI_LOOKUP_URL")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

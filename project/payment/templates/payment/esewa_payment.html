@@ -1,0 +1,14 @@
+<form action="https://uat.esewa.com.np/epay/main" method="POST" id="esewa_form">
+    <input value="{{ amount }}" name="tAmt" type="hidden">
+    <input value="{{ amount }}" name="amt" type="hidden">
+    <input value="0" name="txAmt" type="hidden">
+    <input value="0" name="psc" type="hidden">
+    <input value="0" name="pdc" type="hidden">
+    <input value="{{ merchant_code }}" name="scd" type="hidden">
+    <input value="{{ product_id }}" name="pid" type="hidden">
+    <input value="{{ success_url }}" type="hidden" name="su">
+    <input value="{{ failure_url }}" type="hidden" name="fu">
+</form>
+<script>
+    document.getElementById("esewa_form").submit();
+</script>
