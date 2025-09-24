@@ -30,7 +30,7 @@ python manage.py runserver
 [![Cart page](screenshots/cartpage.PNG)](screenshots/cartpage.PNG)
 
 ## Search page
-[![Search page](screenshots/searchpage.png)](screenshots/searchpage.png)
+[![Search page](screenshots/searchpage.PNG)](screenshots/searchpage.PNG)
 
 ## Payment page
 [![Payment page](screenshots/paymentpage.PNG)](screenshots/paymentpage.PNG)
