@@ -18,26 +18,19 @@ python manage.py runserver
 ## Screenshots
 
 ### Homepage
-[![Homepage (thumbnail)](screenshots/homepage-thumb.png)](screenshots/homepage.png)
-
+![Homepage](screenshots/homepage.PNG)
 
 ## Signup page
-![signup page](screenshots/signupage.png)
-
+![Signup page](screenshots/signupage.PNG)
 
 ### Product page
-![Product page](screenshots/productpage.png)
+![Product page](screenshots/productpage.PNG)
 
+## Cart page
+![Cart page](screenshots/cartpage.PNG)
 
-## cart page
-![Cart page](screenshots/Cartpage.png)
+## Search page
+![Search page](screenshots/searchpage.png)
 
-
-## search page
-![search page](screenshots/searchpage.png)
-
-## payment page
-![Payment page](screenshots/paymentpage.png)
-
-
-
+## Payment page
+![Payment page](screenshots/paymentpage.PNG)
