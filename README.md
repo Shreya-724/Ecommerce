@@ -13,3 +13,31 @@ An e-commerce thrift clothing store built using Django, HTML, CSS, JavaScript, a
 Clone the repo and run:
 ```bash
 python manage.py runserver
+
+
+## Screenshots
+
+### Homepage
+[![Homepage (thumbnail)](screenshots/homepage-thumb.png)](screenshots/homepage.png)
+
+
+## Signup page
+![signup page](screenshots/signupage.png)
+
+
+### Product page
+![Product page](screenshots/productpage.png)
+
+
+## cart page
+![Cart page](screenshots/Cartpage.png)
+
+
+## search page
+![search page](screenshots/searchpage.png)
+
+## payment page
+![Payment page](screenshots/paymentpage.png)
+
+
+
